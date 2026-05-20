@@ -1,4 +1,4 @@
-name: SIT CICD Deployment
+name: SIT CICD Pipeline
 
 on:
   workflow_dispatch:

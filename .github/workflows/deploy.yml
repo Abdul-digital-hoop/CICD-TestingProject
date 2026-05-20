@@ -10,10 +10,6 @@ jobs:
     environment:
       name: sit
 
-    concurrency:
-      group: sit-deployment
-      cancel-in-progress: true
-
     steps:
       - name: Checkout Latest SIT Code
         uses: actions/checkout@v4
@@ -31,5 +27,5 @@ jobs:
       - name: Build Application
         run: npm run build
 
-      - name: SIT Deployment
-        run: echo "Latest SIT branch deployed"
+      - name: Deployment Completed
+        run: echo "SIT deployment completed"

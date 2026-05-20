@@ -3,11 +3,6 @@ name: SIT Deployment
 on:
   workflow_dispatch:
 
-  # Temporary trigger for GitHub UI detection
-  push:
-    branches:
-      - sit
-
 jobs:
   deploy:
     runs-on: ubuntu-latest

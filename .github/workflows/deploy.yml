@@ -3,12 +3,21 @@ name: SIT Deployment
 on:
   workflow_dispatch:
 
+  # Temporary trigger for GitHub UI detection
+  push:
+    branches:
+      - sit
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     environment:
       name: sit
+
+    concurrency:
+      group: sit-deployment
+      cancel-in-progress: true
 
     steps:
       - name: Checkout Latest SIT Code
@@ -27,5 +36,5 @@ jobs:
       - name: Build Application
         run: npm run build
 
-      - name: Deployment Completed
-        run: echo "SIT deployment completed"
+      - name: SIT Deployment Completed
+        run: echo "Latest SIT branch deployed successfully"
